@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
 var pike = {
   name: '1st and Pike',
@@ -13,6 +13,15 @@ var pike = {
       var cookiesPerCustomerPerHour = Math.ceil(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
       this.avgCookiePerHour.push(Math.ceil(cookiesPerCustomerPerHour * this.avgCookie));
     }
+    this.totalCookiesPerStore();
+  },
+  totalCookiesPerStore: function() {
+    var total = 0;
+    for(var i = 0; i < hours.length; i++) {
+      total += this.avgCookiePerHour[i];
+    }
+    console.log(total);
+    this.avgCookiePerHour.push(total);
   },
   render: function() {
     var divEl = document.getElementById('store-container');
@@ -20,7 +29,7 @@ var pike = {
     var ulEl = document.createElement('ul');
     ulEl.textContent = this.name;
     divEl.appendChild(ulEl);
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < hours.length; i++) {
       var liEl = document.createElement('li');
       liEl.textContent = hours[i] + ': ' + this.avgCookiePerHour[i] + ' cookies';
       ulEl.appendChild(liEl);
