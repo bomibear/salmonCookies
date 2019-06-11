@@ -27,3 +27,6 @@ var nameOfStore = {
 }
 ```
 
+## Acknowledgements
+Color scheme from [here](https://coolors.co/c9cba3-ffe1a8-e26d5c-723d46-472d30).
+Stock photo of the hands holding the cookie is from [here](https://www.pexels.com/search/cookies/).

@@ -8,10 +8,12 @@ var pike = {
   maxCustomer: 65,
   avgCookie: 6.3,
   avgCookiePerHour: [],
-  customerPerHour: function() {
+  totalCookiesPerHour: function() {
+    //find random number of customers per hour.
     for(var i = 0; i < hours.length - 1; i++) {
-      var cookiesPerCustomerPerHour = Math.ceil(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
-      this.avgCookiePerHour.push(Math.ceil(cookiesPerCustomerPerHour * this.avgCookie));
+      var total = Math.ceil(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
+      //multiply value by avgCookie to find cookies per hour for the store
+      this.avgCookiePerHour.push(Math.ceil(total * this.avgCookie));
     }
     this.totalCookiesPerStore();
   },
@@ -20,12 +22,11 @@ var pike = {
     for(var i = 0; i < hours.length - 1; i++) {
       total += this.avgCookiePerHour[i];
     }
-    console.log(this.avgCookiePerHour);
     this.avgCookiePerHour.push(total);
   },
   render: function() {
     var divEl = document.getElementById('store-container');
-    this.customerPerHour();
+    this.totalCookiesPerHour();
     var ulEl = document.createElement('ul');
     ulEl.textContent = this.name;
     divEl.appendChild(ulEl);
@@ -55,7 +56,6 @@ var seaTac = {
     for(var i = 0; i < hours.length - 1; i++) {
       total += this.avgCookiePerHour[i];
     }
-    console.log(this.avgCookiePerHour);
     this.avgCookiePerHour.push(total);
   },
   render: function() {
@@ -90,7 +90,6 @@ var seattleCenter = {
     for(var i = 0; i < hours.length - 1; i++) {
       total += this.avgCookiePerHour[i];
     }
-    console.log(this.avgCookiePerHour);
     this.avgCookiePerHour.push(total);
   },
   render: function() {
@@ -125,7 +124,6 @@ var capitolHill = {
     for(var i = 0; i < hours.length - 1; i++) {
       total += this.avgCookiePerHour[i];
     }
-    console.log(this.avgCookiePerHour);
     this.avgCookiePerHour.push(total);
   },
   render: function() {
@@ -160,7 +158,6 @@ var alki = {
     for(var i = 0; i < hours.length - 1; i++) {
       total += this.avgCookiePerHour[i];
     }
-    console.log(this.avgCookiePerHour);
     this.avgCookiePerHour.push(total);
   },
   render: function() {
