@@ -3,7 +3,7 @@
 var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
 var allStores = [];
-var storeTable = document.getElementById('store-container');
+var storeTable = document.getElementById('store-table');
 
 var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.name = name;
@@ -15,19 +15,28 @@ var Store = function(name, minCustomer, maxCustomer, avgCookie) {
 
 //render the table
 // Store.prototype.render = function() {
-  
 // }
 
-//make a header row
 function makeHeaderRow() {
-  
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Store';
+  trEl.appendChild(thEl);
+  //append hours
+  for(var i = 0; i < hours.length; i++) {
+    thEl = document.createElement('th');
+    thEl.textContent = hours[i];
+    trEl.appendChild(thEl);
+  }
+  //append hours to the dom
+  storeTable.appendChild(trEl);
 }
 
 //create instances of the stores
 //var pike = new Store('1st and Pike', 23, 65, 6.3);
 
 //call the header row first
-// makeHeaderRow();
+makeHeaderRow();
 
 //call the functions
 // pike.render();
