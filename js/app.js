@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
+var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 var allStores = [];
 var storeTable = document.getElementById('store-table');
@@ -12,13 +12,13 @@ var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.avgCookie = avgCookie;
   allStores.push(this);
   this.avgCookiePerHour = [];
-  this.cookiesPerHour();
+  this.cookiesPerHourPerStore();
   this.cookiesPerStore();
 };
 
-Store.prototype.cookiesPerHour = function() {
+Store.prototype.cookiesPerHourPerStore = function() {
   //find random number of customers per hour.
-  for(var i = 0; i < hours.length - 1; i++) {
+  for(var i = 0; i < hours.length; i++) {
     var total = Math.ceil(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
     //multiply value by avgCookie to find cookies per hour for the store
     this.avgCookiePerHour.push(Math.ceil(total * this.avgCookie));
@@ -28,7 +28,7 @@ Store.prototype.cookiesPerHour = function() {
 //calculate daily total for each store
 Store.prototype.cookiesPerStore = function() {
   var total = 0;
-  for(var i = 0; i < hours.length - 1; i++) {
+  for(var i = 0; i < hours.length; i++) {
     total += this.avgCookiePerHour[i];
   }
   this.avgCookiePerHour.push(total);
@@ -55,13 +55,25 @@ function makeHeaderRow() {
   thEl.textContent = 'Store';
   trEl.appendChild(thEl);
   //append hours
-  for(var i = 0; i < hours.length; i++) {
+  for(var i = 0; i <= hours.length; i++) {
     thEl = document.createElement('th');
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
+  thEl.textContent = 'Total';
+  trEl.appendChild(thEl);
   //append hours to the dom
   storeTable.appendChild(trEl);
+}
+
+function makeFooterRow() {
+  var tfEl = document.createElement('tfoot');
+  var trEl = document.createElement('tr');
+  trEl.textContent = 'Total';
+  tfEl.appendChild(trEl);
+
+
+  storeTable.appendChild(tfEl);
 }
 
 //create instances of the stores
@@ -82,3 +94,4 @@ capitolHill.render();
 alki.render();
 
 //make a footer row
+makeFooterRow();
