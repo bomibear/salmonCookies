@@ -5,6 +5,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', 
 var allStores = [];
 var storeTable = document.getElementById('store-table');
 var tossersTable = document.getElementById('tossers-table');
+var storeForm = document.getElementById('storeForm');
 
 var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.name = name;
@@ -124,10 +125,12 @@ var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
+
 //call the header row first
 makeHeaderRow();
 
-//call the functions
+
+
 pike.render();
 seaTac.render();
 seattleCenter.render();
@@ -136,6 +139,10 @@ alki.render();
 
 //make a footer row
 makeFooterRow();
+
+
+
+
 
 //Tossers
 function makeTossersHeaderRow() {
@@ -193,10 +200,34 @@ function makeTossersFooterRow() {
   tossersTable.appendChild(trEl);
 }
 
-pike.renderTossers();
-seaTac.renderTossers();
-seattleCenter.renderTossers();
-capitolHill.renderTossers();
-alki.renderTossers();
+// pike.renderTossers();
+// seaTac.renderTossers();
+// seattleCenter.renderTossers();
+// capitolHill.renderTossers();
+// alki.renderTossers();
 
-makeTossersFooterRow();
+// makeTossersFooterRow();
+
+function addStore(e){
+  event.preventDefault();
+  var name = e.target.storeName.value;
+  var minCust = e.target.minCust.value;
+  var maxCust = e.target.maxCust.value;
+  var avgCookie = e.target.avgCookie.value;
+
+  new Store(name, minCust, maxCust, avgCookie);
+
+  storeTable.innerHTML = '';
+  makeHeaderRow();
+  for(var i = 0 ; i < allStores.length ; i++){
+    allStores[i].render();
+  }
+  makeFooterRow();
+}
+
+storeForm.addEventListener('submit', addStore);
+
+// 1. make a header
+// 2. new stores are instantiated (pre def)
+// 3. make footer runs
+// 
