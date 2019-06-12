@@ -5,6 +5,8 @@ A salmon cookie shop online store front.
 This application implements the use of JavaScript objects in order to build a sales page for a cookie shop.
 
 ## Daily Summaries
+Day 3 - Forms
+
 Day 2 - Code from the previous day was simplified with the use of a constructor
 ```javascript
 var Store = function(name, minCustomer, maxCustomer, avgCookie) {
