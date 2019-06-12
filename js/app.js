@@ -47,7 +47,7 @@ Store.prototype.tossersCalculation = function () {
       totalTossers += minTossers;
     } else {
       this.tossersArray.push(tossersNeeded);
-      totalTossers += minTossers;
+      totalTossers += tossersNeeded;
     }
   }
   this.tossersArray.push(totalTossers);
