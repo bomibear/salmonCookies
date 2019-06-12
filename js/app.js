@@ -11,27 +11,28 @@ var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.maxCustomer = maxCustomer;
   this.avgCookie = avgCookie;
   allStores.push(this);
-  this.avgCookiePerHour = [];
+  this.cookiePerHourPerStoreArray = [];
   this.cookiesPerHourPerStore();
   this.cookiesPerStore();
+  this.cookiesAtEachHour = [];
 };
 
 Store.prototype.cookiesPerHourPerStore = function() {
-  //find random number of customers per hour.
   for(var i = 0; i < hours.length; i++) {
+    //find random number of customers per hour.
     var total = Math.ceil(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
     //multiply value by avgCookie to find cookies per hour for the store
-    this.avgCookiePerHour.push(Math.ceil(total * this.avgCookie));
+    this.cookiePerHourPerStoreArray.push(Math.ceil(total * this.avgCookie));
   }
 };
 
-//calculate daily total for each store
+//calculate total for each store
 Store.prototype.cookiesPerStore = function() {
   var total = 0;
   for(var i = 0; i < hours.length; i++) {
-    total += this.avgCookiePerHour[i];
+    total += this.cookiePerHourPerStoreArray[i];
   }
-  this.avgCookiePerHour.push(total);
+  this.cookiePerHourPerStoreArray.push(total);
 };
 
 //make a table row for each store's data
@@ -40,9 +41,9 @@ Store.prototype.render = function() {
   trEl.textContent = this.name;
   storeTable.appendChild(trEl);
 
-  for(var i = 0; i < this.avgCookiePerHour.length; i++) {
+  for(var i = 0; i < this.cookiePerHourPerStoreArray.length; i++) {
     var tdEl = document.createElement('td');
-    tdEl.textContent = this.avgCookiePerHour[i];
+    tdEl.textContent = this.cookiePerHourPerStoreArray[i];
     trEl.appendChild(tdEl);
   }
   storeTable.appendChild(trEl);
@@ -67,13 +68,27 @@ function makeHeaderRow() {
 }
 
 function makeFooterRow() {
-  var tfEl = document.createElement('tfoot');
   var trEl = document.createElement('tr');
-  trEl.textContent = 'Total';
-  tfEl.appendChild(trEl);
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Total';
+  trEl.appendChild(tdEl);
+  storeTable.appendChild(trEl);
+  var hourlyTotal = 0;
+  for(var i = 0; i < hours.length; i++) {
+    var total = 0;
+    for(var j = 0; j < allStores.length; j++) {
+      total += allStores[j].cookiePerHourPerStoreArray[i];
+    }
+    hourlyTotal += total;
+    tdEl = document.createElement('td');
+    tdEl.textContent = total;
+    trEl.appendChild(tdEl);
+  }
 
-
-  storeTable.appendChild(tfEl);
+  tdEl = document.createElement('td');
+  tdEl.textContent = hourlyTotal;
+  trEl.appendChild(tdEl);
+  storeTable.appendChild(trEl);
 }
 
 //create instances of the stores
