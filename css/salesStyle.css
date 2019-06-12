@@ -1,0 +1,28 @@
+body {
+  background-color: #C9CBA3;
+}
+
+h2 {
+  font-family: 'Bree Serif', serif;
+  color: #723D46;
+  text-shadow: 2px 2px #C9CBA3;
+  font-size: 2em;
+  text-align: center;
+}
+
+table {
+  font-family: 'Dosis', sans-serif;
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 auto; 
+  font-size: 1.25em;
+}
+
+td {
+  color: #723D46;
+  text-shadow: 2px 2px #C9CBA3;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #472D30;
+}

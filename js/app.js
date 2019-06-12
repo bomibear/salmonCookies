@@ -69,10 +69,9 @@ function makeHeaderRow() {
 
 function makeFooterRow() {
   var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  tdEl.textContent = 'Total';
-  trEl.appendChild(tdEl);
+  trEl.textContent = 'Total';
   storeTable.appendChild(trEl);
+  var tdEl = document.createElement('td');
   var hourlyTotal = 0;
   for(var i = 0; i < hours.length; i++) {
     var total = 0;
