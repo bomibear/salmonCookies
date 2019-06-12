@@ -5,6 +5,25 @@ A salmon cookie shop online store front.
 This application implements the use of JavaScript objects in order to build a sales page for a cookie shop.
 
 ## Daily Summaries
+Day 2 - Code from the previous day was simplified with the use of a constructor
+```javascript
+var Store = function(name, minCustomer, maxCustomer, avgCookie) {
+  this.name = name;
+  this.minCustomer = minCustomer;
+  this.maxCustomer = maxCustomer;
+  this.avgCookie = avgCookie;
+  allStores.push(this);
+  this.cookiePerHourPerStoreArray = [];
+  this.cookiesPerHourPerStore();
+  this.cookiesPerStore();
+  this.cookiesAtEachHour = [];
+};
+```
+Then stores were instantiated like so:
+```javascript
+var pike = new Store('1st and Pike', 23, 65, 6.3);
+```
+
 Day 1 - Use object literal notation to represent information for each store.  The random number generator was taken from [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 
 The object literals used looked something like this:
