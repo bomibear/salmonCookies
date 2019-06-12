@@ -1,10 +1,54 @@
-body {
-  margin: auto 0;
-  background: #FFE1A8;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-h1 {
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-image: url(../assets/hands.jpeg);
+  display: table;
+  background-size: cover;
+}
+
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+
+.content {
+  margin: auto 0;
+}
+
+.content h1 {
   font-family: 'Delius Unicase', cursive;
+  font-size: 400%;
+  color:white;
+  text-shadow: 3px 3px 100px #472D30;
+}
+
+.btn {
+  background: #472D30;
+  border-radius: 9px;
+  font-family: 'Bree Serif', serif;
+  color: #FFE1A8;
+  font-size: 200%;
+  padding: 10px 20px;
+  border: solid #FFE1A8 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: white;
+  text-shadow: 3px 3px 200px #472D30;
+  border: solid;
 }
 
 table {
