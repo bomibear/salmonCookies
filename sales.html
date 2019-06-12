@@ -17,6 +17,24 @@
         </ul>
       </nav>
     </header>
+    <form id="storeForm">
+      <fieldset>
+        <legend>Add a Store</legend>
+        <label for="storeName">Name</label>
+        <input name="storeName" type="text">
+
+        <label for="minCust">Minimum Customer</label>
+        <input name="minCust" type="number" min="0">
+
+        <label for="maxCust">Maxium Customer</label>
+        <input name="maxCust" type="number" min="0">
+
+        <label for="avgCookie">Average Cookie</label>
+        <input name="avgCookie" type="number" min="0">
+
+        <input type="submit" value="Add A Store"></input>
+      </fieldset>
+    </form>
 
     <section>
       <h2>Sales Information</h2>
