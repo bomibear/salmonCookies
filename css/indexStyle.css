@@ -5,6 +5,12 @@ html, body {
   width: 100%;
 }
 
+footer {
+  background-color: #FFE1A8;;
+  height: 150px;
+}
+
+/* HERO IMAGE */
 .intro {
   height: 100%;
   width: 100%;
@@ -50,3 +56,46 @@ html, body {
   text-shadow: 3px 3px 200px #472D30;
   border: solid;
 }
+
+h1 {
+  font-family: 'Delius Unicase', cursive;
+  color: #472D30;
+  font-size: 30px;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+/* ABOUT US */
+main > article {
+  margin: 100px 0;
+
+}
+
+main > article > img {
+  border-radius: 5px;
+}
+
+main > article > section {
+  width: 50%;
+  float:right;
+  margin-right: 10%;
+}
+
+main > article > section > h1 {
+  margin: 10px 0;
+}
+
+p {
+  font-family: 'Dosis', sans-serif;
+  font-size:1em;
+  overflow: scroll;
+  height: 220px;
+  line-height: 22px;
+  font-style: italic;
+  overflow: scroll;
+}
+
+/* PRODUCT */
