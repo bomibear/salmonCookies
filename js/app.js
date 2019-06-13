@@ -5,6 +5,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am' , '11am', '12pm', '1pm', '2pm', 
 var allStores = [];
 var storeTable = document.getElementById('store-table');
 var tossersTable = document.getElementById('tossers-table');
+var storeForm = document.getElementById('storeForm');
 
 var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.name = name;
@@ -17,7 +18,6 @@ var Store = function(name, minCustomer, maxCustomer, avgCookie) {
   this.tossersArray = [];
   this.cookiesPerHourPerStore();
   this.cookiesPerStore();
-  this.cookiesAtEachHour = [];
   this.tossersCalculation();
 };
 
@@ -36,6 +36,7 @@ Store.prototype.tossersCalculation = function () {
   var projectedSales = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
   var totalTossers = 0;
   var minTossers = 2;
+  //number of customers adjusted w the projected sales
   for(var i = 0; i < this.numberOfCustomersArray.length; i++) {
     this.numberOfCustomersArray[i] = Math.ceil(this.numberOfCustomersArray[i] * projectedSales[i]);
   }
@@ -127,7 +128,6 @@ var alki = new Store('Alki', 2, 16, 4.6);
 //call the header row first
 makeHeaderRow();
 
-//call the functions
 pike.render();
 seaTac.render();
 seattleCenter.render();
@@ -160,7 +160,7 @@ makeTossersHeaderRow();
 Store.prototype.renderTossers = function () {
   var trEl = document.createElement('tr');
   trEl.textContent = this.name;
-  storeTable.appendChild(trEl);
+  tossersTable.appendChild(trEl);
 
   for(var i = 0; i < this.tossersArray.length; i++) {
     var tdEl = document.createElement('td');
@@ -200,3 +200,30 @@ capitolHill.renderTossers();
 alki.renderTossers();
 
 makeTossersFooterRow();
+
+function addStore(e){
+  event.preventDefault();
+  var name = e.target.storeName.value;
+  var minCust = e.target.minCust.value;
+  var maxCust = e.target.maxCust.value;
+  var avgCookie = e.target.avgCookie.value;
+
+  new Store(name, minCust, maxCust, avgCookie);
+
+  storeTable.innerHTML = '';
+  makeHeaderRow();
+  for(var i = 0 ; i < allStores.length ; i++){
+    allStores[i].render();
+  }
+  makeFooterRow();
+
+  tossersTable.innerHTML = '';
+  makeTossersHeaderRow();
+  for(var j = 0; j < allStores.length; j++){
+    console.log('inside rendering');
+    allStores[j].renderTossers();
+  }
+  makeTossersFooterRow();
+}
+
+storeForm.addEventListener('submit', addStore);
