@@ -1,5 +1,33 @@
 body {
   background-color: #C9CBA3;
+  margin: auto 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E26D5C;
+  margin: auto 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #723D46;
+  padding: 1em;
+  text-decoration: none;
+  font-family: 'Bree Serif', serif;
+  font-size: 1.5em;
+}
+
+li a:hover {
+  background-color: #723D46;
+  color: #FFE1A8;
 }
 
 h2 {
@@ -8,6 +36,10 @@ h2 {
   text-shadow: 2px 2px #C9CBA3;
   font-size: 2em;
   text-align: center;
+}
+
+legend {
+  font-family: 'Bree Serif', serif;
 }
 
 table {
