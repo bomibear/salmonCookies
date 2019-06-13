@@ -220,7 +220,6 @@ function addStore(e){
   tossersTable.innerHTML = '';
   makeTossersHeaderRow();
   for(var j = 0; j < allStores.length; j++){
-    console.log('inside rendering');
     allStores[j].renderTossers();
   }
   makeTossersFooterRow();
