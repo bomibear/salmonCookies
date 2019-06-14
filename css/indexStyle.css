@@ -6,6 +6,8 @@ html, body {
 }
 
 footer {
+  clear: both;
+  position: relative;
   background-color: #FFE1A8;;
   height: 150px;
 }
@@ -26,6 +28,11 @@ footer {
   width: 100%;
   max-width: none;
   text-align: center;
+}
+
+.intro img {
+  width: 20%;
+  height: 20%;
 }
 
 .content {
@@ -58,6 +65,7 @@ footer {
 }
 
 h1 {
+  margin: 60px 0;
   font-family: 'Delius Unicase', cursive;
   color: #472D30;
   font-size: 30px;
@@ -71,7 +79,6 @@ main {
 /* ABOUT US */
 main > article {
   margin: 100px 0;
-
 }
 
 main > article > img {
@@ -82,10 +89,6 @@ main > article > section {
   width: 50%;
   float:right;
   margin-right: 10%;
-}
-
-main > article > section > h1 {
-  margin: 10px 0;
 }
 
 p {
@@ -99,3 +102,25 @@ p {
 }
 
 /* PRODUCT */
+img {
+  border-radius: 5px;
+}
+
+#product > ul {
+  margin: 50px 0;
+}
+
+#product > ul > li:nth-child(3n+2) {
+  margin: 0 10px;
+}
+
+#product ul > li{
+  list-style: none;
+  float: left;
+}
+
+/* FINAL */
+
+#visit {
+  margin-top: 50px;
+}
