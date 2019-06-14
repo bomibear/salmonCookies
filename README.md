@@ -5,7 +5,7 @@ A salmon cookie shop online store front.
 This application implements the use of JavaScript objects in order to build a sales page for a cookie shop.
 
 ## Daily Summaries
-Day 5 - Site is deployed to github.
+Day 5 - Site is deployed to github: https://bomibear.github.io/salmonCookies/
 
 Day 4 - Styling was added to index.html and sales.html.  
 
