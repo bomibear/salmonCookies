@@ -3,6 +3,10 @@ body {
   margin: auto 0;
 }
 
+section {
+  margin: 40px 0;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -14,6 +18,10 @@ ul {
 
 li {
   float: left;
+}
+
+a {
+  margin: 0 60px;
 }
 
 li a {
@@ -38,8 +46,28 @@ h2 {
   text-align: center;
 }
 
+fieldset {
+  margin: 10px 60px;
+}
+
 legend {
   font-family: 'Bree Serif', serif;
+  color: #723D46;
+  font-size:2em;
+}
+
+label {
+  font-family: 'Bree Serif', serif;
+  color: #723D46;
+  font-size: 20px;
+  width: 20%;
+  line-height: 40px;
+}
+
+input {
+  font-size: 20px;
+  border: 2px solid #723D46;
+  width: 30%;
 }
 
 table {
@@ -64,4 +92,19 @@ img {
   width: 20%;
   height: 20%;
   margin-top: 17px;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  background-color:#723D46;
+  color: #C9CBA3;
+  margin-left:350px;
+  margin-top:20px;
+}
+
+input[type=submit]:hover {
+  background-color: #FFE1A8;
+  color: #723D46;
+  transition: 350ms;
+  cursor: pointer;
 }

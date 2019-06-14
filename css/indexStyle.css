@@ -10,6 +10,14 @@ footer {
   position: relative;
   background-color: #FFE1A8;;
   height: 150px;
+  text-align: center;
+  vertical-align: center;
+}
+
+footer > img {
+  margin-top:20px;
+  width: 20%;
+  height: 60%;
 }
 
 /* HERO IMAGE */
@@ -30,10 +38,6 @@ footer {
   text-align: center;
 }
 
-.intro img {
-  width: 20%;
-  height: 20%;
-}
 
 .content {
   margin: auto 0;
@@ -65,7 +69,6 @@ footer {
 }
 
 h1 {
-  margin: 60px 0;
   font-family: 'Delius Unicase', cursive;
   color: #472D30;
   font-size: 30px;
@@ -95,7 +98,7 @@ p {
   font-family: 'Dosis', sans-serif;
   font-size:1em;
   overflow: scroll;
-  height: 220px;
+  height: 200px;
   line-height: 22px;
   font-style: italic;
   overflow: scroll;
@@ -107,7 +110,8 @@ img {
 }
 
 #product > ul {
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 500px;
 }
 
 #product > ul > li:nth-child(3n+2) {
@@ -120,7 +124,10 @@ img {
 }
 
 /* FINAL */
-
 #visit {
-  margin-top: 50px;
+  align-content: center;
+}
+
+#visit img {
+  margin-left: 50px;
 }
