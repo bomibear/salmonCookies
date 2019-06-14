@@ -5,7 +5,11 @@ A salmon cookie shop online store front.
 This application implements the use of JavaScript objects in order to build a sales page for a cookie shop.
 
 ## Daily Summaries
-Day 3 - Forms
+Day 5 - Site is deployed to github.
+
+Day 4 - Styling was added to index.html and sales.html.  
+
+Day 3 - A form was added that allowed a user to add a new store, which was then appended to the table with new calculations.
 
 Day 2 - Code from the previous day was simplified with the use of a constructor
 ```javascript
