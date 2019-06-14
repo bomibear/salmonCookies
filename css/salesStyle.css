@@ -8,7 +8,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #E26D5C;
+  background-color: white;
   margin: auto 0;
 }
 
@@ -57,4 +57,11 @@ td {
   padding: 5px;
   text-align: center;
   border: 1px solid #472D30;
+}
+
+img {
+  border-radius: 5px;
+  width: 20%;
+  height: 20%;
+  margin-top: 17px;
 }

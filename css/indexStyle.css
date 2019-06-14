@@ -5,6 +5,14 @@ html, body {
   width: 100%;
 }
 
+footer {
+  clear: both;
+  position: relative;
+  background-color: #FFE1A8;;
+  height: 150px;
+}
+
+/* HERO IMAGE */
 .intro {
   height: 100%;
   width: 100%;
@@ -20,6 +28,11 @@ html, body {
   width: 100%;
   max-width: none;
   text-align: center;
+}
+
+.intro img {
+  width: 20%;
+  height: 20%;
 }
 
 .content {
@@ -49,4 +62,65 @@ html, body {
   color: white;
   text-shadow: 3px 3px 200px #472D30;
   border: solid;
+}
+
+h1 {
+  margin: 60px 0;
+  font-family: 'Delius Unicase', cursive;
+  color: #472D30;
+  font-size: 30px;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+/* ABOUT US */
+main > article {
+  margin: 100px 0;
+}
+
+main > article > img {
+  border-radius: 5px;
+}
+
+main > article > section {
+  width: 50%;
+  float:right;
+  margin-right: 10%;
+}
+
+p {
+  font-family: 'Dosis', sans-serif;
+  font-size:1em;
+  overflow: scroll;
+  height: 220px;
+  line-height: 22px;
+  font-style: italic;
+  overflow: scroll;
+}
+
+/* PRODUCT */
+img {
+  border-radius: 5px;
+}
+
+#product > ul {
+  margin: 50px 0;
+}
+
+#product > ul > li:nth-child(3n+2) {
+  margin: 0 10px;
+}
+
+#product ul > li{
+  list-style: none;
+  float: left;
+}
+
+/* FINAL */
+
+#visit {
+  margin-top: 50px;
 }
